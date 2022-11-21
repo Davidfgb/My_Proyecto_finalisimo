@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Proyecto_finalisimo">
         <activity
+            android:name=".Ingreso_Info"
+            android:exported="false" />
+        <activity
+            android:name=".Metas_desechos"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizar_Desechos"
+            android:exported="false" />
+        <activity
+            android:name=".Pagina_Principal"
+            android:exported="false" />
+        <activity
+            android:name=".Registrase"
+            android:exported="false" />
+        <activity
+            android:name=".Nosotros"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

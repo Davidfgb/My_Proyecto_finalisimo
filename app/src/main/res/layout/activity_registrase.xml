@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#011420"
+    tools:context=".Registrase">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="657dp"
+        android:background="#011420"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editText_nombre_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_apellido_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="textPersonName"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_correo_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_pasword_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Contrseña"
+            android:inputType="textPassword"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_confrimar_pasword_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Confirmar contraseña"
+            android:inputType="textPassword"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_direccion_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Direccion"
+            android:inputType="textPersonName"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_telefono_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="textPersonName"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bn_regitrar_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="registar" />
+
+            <Button
+                android:id="@+id/bn_regresar_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="regresar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

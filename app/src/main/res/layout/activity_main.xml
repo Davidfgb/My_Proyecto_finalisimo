@@ -4,15 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#011420"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="661dp"
+        android:background="#000F34BA"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595">
+
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="169dp"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="111dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/googleg_standard_color_18" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText_correo_am"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="correo"
+            android:inputType="textEmailAddress"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_pasword_am"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="contraseña"
+            android:inputType="textPassword"
+            android:textColor="#03A9F4"
+            android:textColorHint="#03A9F4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bn_entrar_am"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="entrar"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/bn_registrase_am"
+                android:layout_width="386dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="Registrase"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bn_menu_am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="Menu"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
