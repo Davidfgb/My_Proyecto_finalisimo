@@ -1,7 +1,6 @@
 package com.ean.my_proyecto_finalisimo
 
 
-
 import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
