@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#011420"
-    tools:context=".Registrase">
+    tools:context=".Eliminar_Desechos">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="657dp"
-        android:background="#011420"
-        android:gravity="center_vertical"
+        android:layout_width="359dp"
+        android:layout_height="681dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,119 +18,113 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="87dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/textView_eliminar"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="65dp"
                 android:layout_weight="1"
-                android:text="Regirtro"
-                android:textColor="#F8F5F5"
+                android:text="Elimnar Registro"
+                android:textColor="#FDFBFB"
                 android:textSize="34sp" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/editText_nombre_rg"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#03A9F4"
-            android:ems="10"
-            android:hint="Nombre"
-            android:inputType="textPersonName"
-            android:textColor="#03A9F4"
-            android:textColorHint="#03A9F4" />
+            android:layout_height="72dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
+                android:layout_weight="1"
+                android:text="Para confirmar que desea eliminar los desechos de un mes por favor ingrese su usario y contraseña"
+                android:textColor="#03A9F4"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"></LinearLayout>
 
         <EditText
-            android:id="@+id/editText_apellido_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#03A9F4"
-            android:ems="10"
-            android:hint="Apellido"
-            android:inputType="textPersonName"
-            android:textColor="#03A9F4"
-            android:textColorHint="#03A9F4" />
-
-        <EditText
-            android:id="@+id/editText_correo_rg"
+            android:id="@+id/editText_elimi_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#03A9F4"
             android:ems="10"
             android:hint="Correo"
-            android:inputType="textEmailAddress"
-            android:textColor="#03A9F4"
-            android:textColorHint="#03A9F4" />
-
-        <EditText
-            android:id="@+id/editText_pasword_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#03A9F4"
-            android:ems="10"
-            android:hint="Contrseña"
-            android:inputType="textPassword"
-            android:textColor="#03A9F4"
-            android:textColorHint="#03A9F4" />
-
-        <EditText
-            android:id="@+id/editText_confrimar_pasword_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#03A9F4"
-            android:ems="10"
-            android:hint="Confirmar contraseña"
-            android:inputType="textPassword"
-            android:textColor="#03A9F4"
-            android:textColorHint="#03A9F4" />
-
-        <EditText
-            android:id="@+id/editText_direccion_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#03A9F4"
-            android:ems="10"
-            android:hint="Direccion"
             android:inputType="textPersonName"
             android:textColor="#03A9F4"
             android:textColorHint="#03A9F4" />
 
         <EditText
-            android:id="@+id/editText_telefono_rg"
+            android:id="@+id/editText_elimi_clave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#03A9F4"
             android:ems="10"
-            android:hint="Telfono "
-            android:inputType="phone"
-            android:textColor="#03A9F4"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_elimi_año"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Año"
+            android:inputType="number"
+            android:textColorHint="#03A9F4" />
+
+        <EditText
+            android:id="@+id/editText_elimi_mes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:ems="10"
+            android:hint="Mes"
+            android:inputType="number"
             android:textColorHint="#03A9F4" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="82dp"
-            android:gravity="center_horizontal"
+            android:layout_height="103dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/bn_regitrar_rg"
+                android:id="@+id/bn_elimi_elimnar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#03A9F4"
-                android:text="registar" />
+                android:text="Eliminar" />
 
             <Button
-                android:id="@+id/bn_regresar_rg"
+                android:id="@+id/bn_elimi_volver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#03A9F4"
-                android:text="regresar" />
+                android:text="volver" />
         </LinearLayout>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

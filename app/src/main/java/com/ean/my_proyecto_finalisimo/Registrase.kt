@@ -35,6 +35,7 @@ class Registrase : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val nombre= findViewById<EditText>(R.id.editText_nombre_rg)
         val apellido= findViewById<EditText>(R.id.editText_apellido_rg)
         val txt_correo= findViewById<EditText>(R.id.editText_correo_rg)
@@ -44,14 +45,14 @@ class Registrase : AppCompatActivity() {
         val addres= findViewById<EditText>(R.id.editText_direccion_rg)
         val phone= findViewById<EditText>(R.id.editText_telefono_rg)
 
-        // usuario.nombre = nombre.toString()
+
 
         boton_registrar.setOnClickListener{
             try {
                 val correo_r = txt_correo.text.toString().lowercase()
                 val pasword_r = txt_pasword.text.toString()
                 val confirmar_r = txt_confirmar.text.toString()
-                if (correo_r.isEmpty() || pasword_r.isEmpty() || confirmar_r.isEmpty()) {
+                if (correo_r.isEmpty() || pasword_r.isEmpty() || confirmar_r.isEmpty()||nombre.text.toString().isEmpty()||apellido.text.toString().isEmpty()||addres.text.toString().isEmpty()||phone.text.toString().isEmpty()) {
                     throw Exception("los campos estan vacios")
                 } else {
                     if (paswords_iguales(pasword_r, confirmar_r)) {
