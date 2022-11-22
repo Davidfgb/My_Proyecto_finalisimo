@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Eliminar_Desechos : AppCompatActivity() {
 
@@ -21,6 +23,15 @@ class Eliminar_Desechos : AppCompatActivity() {
         setContentView(R.layout.activity_eliminar_desechos)
 
         auth = Firebase.auth
+
+        val fecha_act = SimpleDateFormat("yyyy")
+        val fecha_a = fecha_act.format(Date())
+        val fecha_actual = fecha_a.toString()
+
+        val mes_act = SimpleDateFormat("M")
+        val mes_a= mes_act.format(Date())
+        val mes_actual = mes_a.toString()
+
 
         val correo = findViewById<EditText>(R.id.editText_elimi_correo)
         val clave = findViewById<EditText>(R.id.editText_elimi_clave)
@@ -42,18 +53,21 @@ class Eliminar_Desechos : AppCompatActivity() {
                     auth.signInWithEmailAndPassword(correo_st, clave_st)
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                db.collection("desechos").document(correo.text.toString()).collection(fecha.text.toString()).document(mes.text.toString()).delete()
-                                    .addOnSuccessListener {
-                                        Toast.makeText(
-                                            baseContext,
-                                            "Informacion Eliminada",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }
+                                if (fecha_st > fecha_actual || mes_st > mes_actual) {
+                                    throw Exception("La fecha no puede ser mayor a la actual!!")
+                                } else {
+                                    db.collection("Desechos").document(fecha_st).collection(mes_st).document(correo_st).delete()
+                                        .addOnSuccessListener {
+                                            Toast.makeText(baseContext, "Desechos Eliminados", Toast.LENGTH_SHORT).show()
+                                        }
+                                        .addOnFailureListener {
+                                            Toast.makeText(baseContext, "Error al Eliminar", Toast.LENGTH_SHORT).show()
+                                        }
+                                }
                             } else {
                                 Toast.makeText(
                                     baseContext,
-                                    "Error al eliminar",
+                                    "Correo o Clave Incorrectos",
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }

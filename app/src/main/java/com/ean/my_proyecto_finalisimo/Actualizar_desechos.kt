@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Actualizar_desechos : AppCompatActivity() {
 
@@ -23,6 +25,14 @@ class Actualizar_desechos : AppCompatActivity() {
         setContentView(R.layout.activity_actualizar_desechos)
 
         auth = Firebase.auth
+
+        val fecha_act = SimpleDateFormat("yyyy")
+        val fecha_a = fecha_act.format(Date())
+        val fecha_actual = fecha_a.toString()
+
+        val mes_act = SimpleDateFormat("M")
+        val mes_a= mes_act.format(Date())
+        val mes_actual = mes_a.toString()
 
         val boton_actualizar = findViewById<Button>(R.id.bn_actuali_info_actuali)
         val boton_volver = findViewById<Button>(R.id.bn_acutuali_info_volver)
@@ -50,42 +60,48 @@ class Actualizar_desechos : AppCompatActivity() {
                 if (correo_st.isEmpty() || clave_st.isEmpty() || fecha_st.isEmpty() || mes_st.isEmpty()) {
                     throw Exception("Los campos no pueden estar Vacios!!")
                 } else {
-                    auth.signInWithEmailAndPassword(correo_st, clave_st)
-                        .addOnCompleteListener(this) { task ->
-                            if (task.isSuccessful) {
-                                Toast.makeText(
-                                    baseContext,
-                                    "Informacion Actaulizada",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(ContentValues.TAG, "signInWithCustomToken:success")
-                                //updateUI(user)
-                                val desechos = hashMapOf(
-                                    //mes_desecho to desechos_list,
-                                    "desechos_inertes" to inertes_st.toInt(),
-                                    "desechos_urbanos" to urbanos_st.toInt(),
-                                    "desechos_peligrosos" to peligrosos_st.toInt(),
-                                    "desechos_otros" to otros_st.toInt(),
-                                )
-                                db.collection("desechos").document(correo.text.toString()).collection(fecha.text.toString()).document(mes.text.toString())
-                                    .set(desechos)
-                                    .addOnSuccessListener {
-                                        Log.d(
-                                            ContentValues.TAG,
-                                            "DocumentSnapshot successfully written!"
-                                        )
-                                    }
-                                    .addOnFailureListener { e ->
-                                        Log.w(ContentValues.TAG, "Error writing document", e)
-                                    }
-                            } else {
-                                Toast.makeText(
-                                    baseContext, "usuario no registrado",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                    if(fecha_st.toInt() > fecha_actual.toInt() || mes_st.toInt() > mes_actual.toInt()){
+                        throw Exception("La fecha no puede ser mayor a la actual!!")
+                    }else {
+                        auth.signInWithEmailAndPassword(correo_st, clave_st)
+                            .addOnCompleteListener(this) { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(
+                                        baseContext,
+                                        "Informacion Actaulizada",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(ContentValues.TAG, "signInWithCustomToken:success")
+                                    //updateUI(user)
+                                    val desechos = hashMapOf(
+                                        //mes_desecho to desechos_list,
+                                        "desechos_inertes" to inertes_st.toInt(),
+                                        "desechos_urbanos" to urbanos_st.toInt(),
+                                        "desechos_peligrosos" to peligrosos_st.toInt(),
+                                        "desechos_otros" to otros_st.toInt(),
+                                    )
+                                    db.collection("desechos").document(correo.text.toString())
+                                        .collection(fecha.text.toString())
+                                        .document(mes.text.toString())
+                                        .set(desechos)
+                                        .addOnSuccessListener {
+                                            Log.d(
+                                                ContentValues.TAG,
+                                                "DocumentSnapshot successfully written!"
+                                            )
+                                        }
+                                        .addOnFailureListener { e ->
+                                            Log.w(ContentValues.TAG, "Error writing document", e)
+                                        }
+                                } else {
+                                    Toast.makeText(
+                                        baseContext, "usuario no registrado",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
                             }
-                        }
+                    }
                 }
             }
             catch (e:Exception){
